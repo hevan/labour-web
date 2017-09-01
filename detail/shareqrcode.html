@@ -12,17 +12,17 @@
     <!-- Include the CSS -->
     <link href="../assets/css/toolkit-minimal.css" rel="stylesheet">
     <link href="../assets/css/application-minimal.css" rel="stylesheet">
-    <link href="../assets/css/fakeloader.css" rel="stylesheet">
+    <link href="../assets/css/view.css" rel="stylesheet">
 </head>
 <body>
 
 <!--资讯详情页-->
 <div class="det-box outer ">
     <div class="container det-wh small_module">
-        <div class="col-md-12" >
+        <div class="col-12" >
             <div class="det-bg">
                 <div id="id-data-title">
-                  <img src=""  id="idImage"/>
+                  <img src=""  id="idImage" class="share-code"/>
                 </div>
 
             </div>
@@ -36,16 +36,18 @@
 <!-- Include jQuery (required) and the JS -->
 <script src="../assets/js/jquery.min.js"></script>
 <script src="../assets/js/tether.min.js"></script>
-<script src="../assets/js/fakeloader.js"></script>
+<script src="../assets/js/app.js"></script>
 <script src="../assets/js/toolkit.js"></script>
 <script src="../assets/js/utils.js"></script>
 
 <script>
     $(function(){
+
         var curId = Utils.getParam("userId");
         var action = Utils.getParam("action");
 
         var qrcodeUrl =  Utils.getServerName() + '/open/user/userQrcode?userId='+curId+'&action='+action;
+
 
         $("#idImage").attr("src",qrcodeUrl);
     });
